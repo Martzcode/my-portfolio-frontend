@@ -9,6 +9,15 @@
   color: #111;
 }
 
+/* Mobile: footer minimaliste (navbar en bas) */
+@media (max-width: 639px) {
+  .footer {
+    padding: 1.25rem 0;
+    /* espace pour la navbar flottante en bas */
+    padding-bottom: calc(1.25rem + 5rem);
+  }
+}
+
 .footer__container {
   max-width: 1200px;
   margin: 0 auto;
@@ -23,6 +32,12 @@
   flex-wrap: wrap;
   gap: 1.5rem;
   margin-bottom: 2rem;
+}
+
+@media (max-width: 639px) {
+  .footer__top {
+    display: none;
+  }
 }
 
 /* ─── Brand ─── */
@@ -103,6 +118,14 @@
   gap: 1.5rem;
 }
 
+@media (max-width: 639px) {
+  .footer__bottom {
+    border-top: none;
+    padding-top: 0;
+    gap: 0;
+  }
+}
+
 @media (min-width: 768px) {
   .footer__bottom {
     grid-template-columns: auto 1fr;
@@ -138,4 +161,10 @@
 .footer__link--legal:hover {
   color: rgba(0, 0, 0, 0.7);
   background: rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 639px) {
+  .footer__nav {
+    display: none;
+  }
 }
