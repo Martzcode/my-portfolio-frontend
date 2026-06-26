@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Fira+Code:wght@500&display=swap');
+
+/* ─── Footer ──────────────────────────────────────────────── */
+.footer {
+  font-family: 'Inter', sans-serif;
+  padding: 4rem 0 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+  color: #111;
+}
+
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ─── Top: brand + socials ─── */
+.footer__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+/* ─── Brand ─── */
+.footer__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s ease;
+}
+
+.footer__brand:hover {
+  opacity: 0.75;
+}
+
+.footer__brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  background: #111;
+  color: #fff;
+  font-family: 'Fira Code', monospace;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.footer__brand-name {
+  font-family: 'Fira Code', monospace;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.footer__brand-accent {
+  color: #555;
+}
+
+/* ─── Réseaux sociaux ─── */
+.footer__social {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.5rem;
+}
+
+.footer__social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: transparent;
+  color: rgba(0, 0, 0, 0.55);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.footer__social-btn:hover {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* ─── Bottom: copyright + liens ─── */
+.footer__bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .footer__bottom {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+  }
+}
+
+/* ─── Copyright ─── */
+.footer__copyright {
+  font-size: 0.8rem;
+  color: rgba(0, 0, 0, 0.45);
+  line-height: 1.6;
+}
+
+.footer__copyright p {
+  margin: 0;
+}
+
+/* ─── Liens ─── */
+.footer__link {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.footer__link--legal {
+  font-size: 0.78rem;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.footer__link--legal:hover {
+  color: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.04);
+}

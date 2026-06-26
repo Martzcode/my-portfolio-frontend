@@ -39,6 +39,37 @@ Welcome to the frontend repository of my personal portfolio. This application se
 *   **Contact Form Integration:** Fully validated reactive forms with security checks.
 *   **Interactive Visuals:** Soft dark/light modes, animations, and transitions.
 
+### 🧩 Component Architecture
+
+#### `NavBar` — Floating Tubelight Navigation
+
+Located at `src/app/components/navbar/`.
+
+A floating pill-shaped navigation bar inspired by the *tubelight navbar* design pattern. It sits fixed at the **top on desktop** and at the **bottom on mobile**, showing text labels on wide screens and icon-only on small screens.
+
+**Adding or removing a nav link** only requires editing the `navLinks` array in `navbar.ts`:
+
+```typescript
+navLinks: NavLink[] = [
+  { label: 'Home',     path: '/',         icon: 'home'      },
+  { label: 'About',    path: '/about',    icon: 'user'      },
+  { label: 'Projects', path: '/projects', icon: 'briefcase' },
+  { label: 'Contact',  path: '/contact',  icon: 'mail'      },
+];
+```
+
+**Icons** are zero-dependency inline SVGs (paths sourced from [Lucide Icons](https://lucide.dev)). Available icon keys and their corresponding SVGs are declared via a `@switch` block in `navbar.html`. To add a new icon:
+1. Pick an icon on [lucide.dev](https://lucide.dev) and copy its SVG `<path>` data.
+2. Add a new `@case` in `navbar.html` with a descriptive key string.
+3. Extend the `icon` union type in `navbar.ts`.
+4. Use that key in the `navLinks` array.
+
+| Property | Type | Description |
+|---|---|---|
+| `label` | `string` | Text displayed on desktop |
+| `path` | `string` | Angular router path |
+| `icon` | `'home' \| 'user' \| 'briefcase' \| 'mail'` | SVG icon key |
+
 ### 🚀 Getting Started
 
 #### Prerequisites
@@ -94,6 +125,37 @@ Bienvenue sur le dépôt du frontend de mon portfolio personnel. Cette applicati
 *   **Présentation des Compétences :** Visualisation claire des expertises techniques.
 *   **Formulaire de Contact Interactif :** Formulaires réactifs validés en temps réel.
 *   **Effets Visuels Premium :** Prise en charge des thèmes clair/sombre, transitions fluides et animations réactives.
+
+### 🧩 Architecture des Composants
+
+#### `NavBar` — Navigation Flottante Tubelight
+
+Localisé dans `src/app/components/navbar/`.
+
+Barre de navigation en forme de pilule flottante inspirée du design *tubelight navbar*. Elle se positionne en **haut sur desktop** et en **bas sur mobile**, affichant les labels texte sur grand écran et les icônes seules sur mobile.
+
+**Ajouter ou supprimer un lien** ne nécessite de modifier que le tableau `navLinks` dans `navbar.ts` :
+
+```typescript
+navLinks: NavLink[] = [
+  { label: 'Home',     path: '/',         icon: 'home'      },
+  { label: 'About',    path: '/about',    icon: 'user'      },
+  { label: 'Projects', path: '/projects', icon: 'briefcase' },
+  { label: 'Contact',  path: '/contact',  icon: 'mail'      },
+];
+```
+
+**Les icônes** sont des SVG inline sans aucune dépendance externe (chemins SVG issus de [Lucide Icons](https://lucide.dev)). Chaque icône disponible est déclarée via un bloc `@switch` dans `navbar.html`. Pour ajouter une nouvelle icône :
+1. Choisir une icône sur [lucide.dev](https://lucide.dev) et copier son `<path>` SVG.
+2. Ajouter un `@case` dans `navbar.html` avec une clé descriptive.
+3. Étendre le type union `icon` dans `navbar.ts`.
+4. Utiliser cette clé dans le tableau `navLinks`.
+
+| Propriété | Type | Description |
+|---|---|---|
+| `label` | `string` | Texte affiché sur desktop |
+| `path` | `string` | Route Angular |
+| `icon` | `'home' \| 'user' \| 'briefcase' \| 'mail'` | Clé de l'icône SVG |
 
 ### 🚀 Démarrage Rapide
 

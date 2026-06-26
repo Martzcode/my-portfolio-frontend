@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* ─── Host: pilule positionnée de façon fixe ─────────────── */
+:host {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  font-family: 'Inter', sans-serif;
+}
+
+@media (min-width: 640px) {
+  :host {
+    bottom: auto;
+    top: 1.5rem;
+  }
+}
+
+/* ─── Pilule conteneur ────────────────────────────────────── */
+.navbar-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 9999px;
+  padding: 0.25rem;
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* ─── Item de nav ─────────────────────────────────────────── */
+.pill-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 9999px;
+  transition: color 0.25s ease, background 0.25s ease;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.pill-item:hover {
+  color: rgba(0, 0, 0, 0.85);
+}
+
+/* ─── Item actif ──────────────────────────────────────────── */
+.pill-item--active {
+  color: #000;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+/* ─── Effet tubelight ─────────────────────────────────────── */
+/* Desktop (top nav): la barre lumineuse est EN HAUT */
+.pill-item--active::before {
+  content: '';
+  position: absolute;
+  top: -0.6rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1.75rem;
+  height: 0.2rem;
+  background: #000;
+  border-radius: 0 0 9999px 9999px;
+  box-shadow:
+    0 0 6px  2px rgba(0, 0, 0, 0.4),
+    0 0 14px 4px rgba(0, 0, 0, 0.2),
+    0 0 28px 8px rgba(0, 0, 0, 0.08);
+  animation: tubelight-in 0.3s ease forwards;
+}
+
+/* Mobile (bottom nav): la barre lumineuse est EN BAS */
+@media (max-width: 639px) {
+  .pill-item--active::before {
+    top: auto;
+    bottom: -0.6rem;
+    border-radius: 9999px 9999px 0 0;
+  }
+}
+
+@keyframes tubelight-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scaleX(0.4);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scaleX(1);
+  }
+}
+
+/* ─── Labels / Icônes ─────────────────────────────────────── */
+.pill-item__icon {
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.pill-item__label {
+  display: inline;
+}
+
+/* Mobile: icônes uniquement */
+@media (max-width: 639px) {
+  .pill-item__label {
+    display: none;
+  }
+
+  .pill-item__icon {
+    display: flex;
+  }
+
+  .pill-item {
+    padding: 0.6rem 0.9rem;
+  }
+}
