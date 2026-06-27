@@ -1,4 +1,4 @@
-# 🚀 Modern Angular & TypeScript Portfolio Frontend
+# Modern Angular & TypeScript Portfolio Frontend
 
 <div align="center">
 
