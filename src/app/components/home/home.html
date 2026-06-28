@@ -1,0 +1,50 @@
+<section class="feature-section">
+  <!-- Left: text content -->
+  <div class="feature-left">
+    <h1 class="feature-title">
+      Construisons<br />
+      <span class="feature-title-accent">votre idée</span>
+    </h1>
+    <p class="feature-desc">
+      Développeur full-stack passionné par la création d'interfaces modernes
+      et d'architectures robustes. Angular, TypeScript, Java &amp; Cloud.
+    </p>
+    <div class="feature-actions">
+      <a href="/projets" class="btn-primary">Voir mes projets</a>
+      <a href="/contact" class="btn-outline">Me contacter</a>
+    </div>
+  </div>
+
+  <!-- Right: orbit animation -->
+  <div class="orbit-wrapper">
+    <div class="orbit-scene">
+
+      <!-- Center (Angular Logo or anything else) -->
+      <div class="orbit-center">
+        <i class="devicon-angular-plain colored"></i>
+      </div>
+
+      <!-- Orbits -->
+      @for (orbitIdx of orbits; track orbitIdx) {
+        <div
+          class="orbit-ring"
+          [style.width]="getOrbitSize(orbitIdx)"
+          [style.height]="getOrbitSize(orbitIdx)"
+          [style.animation-duration]="getOrbitDuration(orbitIdx)"
+        >
+          @for (icon of getOrbitIcons(orbitIdx); track icon.name; let iconIdx = $index) {
+            @let pos = getIconPos(iconIdx, getOrbitIcons(orbitIdx).length);
+            <div
+              class="orbit-icon"
+              [style.left.%]="pos.x"
+              [style.top.%]="pos.y"
+            >
+              <i [className]="icon.class"></i>
+            </div>
+          }
+        </div>
+      }
+
+    </div>
+  </div>
+</section>

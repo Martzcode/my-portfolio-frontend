@@ -33,7 +33,7 @@ export class Footer {
   // ─── Réseaux sociaux ───────────────────────────────────────
   socialLinks: SocialLink[] = [
     { label: 'GitHub',   href: 'https://github.com/Martzcode',                        icon: 'github'   },
-    { label: 'LinkedIn', href: 'https://linkedin.com/in/martzcode',                   icon: 'linkedin' },
+    { label: 'LinkedIn', href: 'https://linkedin.com/in/marcello-samiandrisoa',       icon: 'linkedin' },
   ];
 
   currentYear = new Date().getFullYear();
